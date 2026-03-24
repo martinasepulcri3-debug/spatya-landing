@@ -17,7 +17,7 @@
 <!-- <script defer data-domain="spatya.com" src="https://plausible.io/js/script.js"></script> -->
 <style>
 /* ══════════════════════════════════════
-   SPATYA v6 — FULL CINEMATIC · ALL FIXES
+   SPATYA v7 — MOBILE-FIRST FIX · ALL RESPONSIVE
    Golden ratio: 16 → 26 → 42 → 68 → 110 → 178
    ══════════════════════════════════════ */
 :root{
@@ -432,24 +432,81 @@ footer{padding:var(--sp-m) 0;border-top:1px solid rgba(91,98,112,0.06)}
 @media(max-width:768px){
   .nav-list{display:none}.burger{display:block}
   .hero-3d{display:none}
-  .hero{min-height:auto;padding:160px 24px var(--sp-xl)}
-  .blocks-scene .blk{display:none}
-  .stat-row{grid-template-columns:1fr}
-  .feat-compact{grid-template-columns:1fr}
-  .ai-flow{flex-wrap:wrap;justify-content:center}
-  .cat-flags{flex-direction:column}
+  /* Hero: reduce top padding, tighten spacing */
+  .hero{min-height:auto;padding:120px 20px var(--sp-l)}
+  h1{font-size:clamp(2rem,8vw,2.8rem)}
+  .hero-p{font-size:.95rem;margin-bottom:var(--sp-m)}
+  /* Hide 3D blocks completely on mobile */
+  .blocks-scene{display:none}
+  /* Scroll hint: hide on mobile (wastes space) */
+  .scroll-hint{display:none}
+  /* Sections: reduce vertical padding */
+  .s-problem,.s-twosides,.s-features,.s-market{padding:var(--sp-xl) 0}
+  .s-portal{padding:var(--sp-xl) 0}
+  .s-wl{padding:var(--sp-xl) 24px}
+  .s-flip{padding:var(--sp-l) 24px var(--sp-m)}
+  .s-cta{padding:var(--sp-xl) 20px}
+  .feat-header{margin-bottom:var(--sp-l)}
+  .feat-row{margin-bottom:var(--sp-l)}
+  /* Stats: 2 columns on mobile, not 1 */
+  .stat-row{grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat-cell{padding:24px 12px}
+  .stat-big{font-size:clamp(1.6rem,7vw,2.2rem)}
+  /* Feature compact grid: 2 cols on mobile */
+  .feat-compact{grid-template-columns:repeat(2,1fr);gap:10px}
+  .feat-mini{padding:20px 16px}
+  .feat-mini h3{font-size:.85rem}
+  .feat-mini p{font-size:.72rem}
+  /* Feature visual: taller ratio so content isn't crushed */
+  .feat-visual{aspect-ratio:4/3;padding:clamp(24px,4vw,36px)}
+  .ai-flow{flex-wrap:wrap;justify-content:center;gap:6px}
+  .ai-flow-step{font-size:.5rem;padding:5px 8px}
+  .cat-flags{flex-direction:column;gap:6px}
+  /* Demo section: better proportions on mobile */
+  .demo-iframe-wrap{height:320px;border-radius:0 0 16px 16px}
+  .demo-frame{border-radius:16px}
+  .demo-toggle{flex-wrap:wrap;gap:6px}
+  .demo-tab{font-size:.6rem;padding:8px 16px}
+  .demo-bar{padding:10px 14px}
+  .demo-url{display:none}
+  .demo-external{font-size:.85rem;padding:6px 12px}
+  /* Portal caption: more visible link on mobile */
+  .portal-caption{font-size:.68rem;opacity:.8;line-height:1.5}
+  /* Two sides */
+  .ts-toggle{flex-wrap:wrap;gap:6px}
+  .ts-toggle-btn{font-size:.6rem;padding:8px 16px}
+  .ts-card{padding:var(--sp-s) 16px}
+  .ts-step p{font-size:.85rem}
+  /* Footer */
   .foot-inner{flex-direction:column;gap:var(--sp-xs)}
+  .foot-links{flex-wrap:wrap;justify-content:center}
+  /* Competitor cards */
   .comp-desktop{display:none}
   .comp-mobile{display:block}
-  .demo-toggle{flex-direction:column;align-items:center;gap:6px}
-  .demo-url{display:none}
-  .demo-iframe-wrap{height:560px;overflow:hidden}
-  .demo-iframe-wrap iframe{width:200%;height:1120px;transform:scale(0.5);transform-origin:top left}
+  /* CTA form */
   .cta-row{flex-direction:column}
+  .cta-inner h2{font-size:clamp(1.4rem,5vw,1.9rem)}
+  /* Pain items tighter */
+  .pain-item{padding:var(--sp-s) var(--sp-xs)}
+  /* Flip text */
+  .flip-text{font-size:clamp(1.2rem,5vw,1.8rem)}
+  /* WL section */
+  .wl-content h2{font-size:clamp(1.6rem,5.5vw,2.4rem)}
+  /* Button sizing */
+  .btn{padding:14px 28px;font-size:.85rem}
+  .hero-actions{gap:10px}
 }
-@media(max-width:480px){
-  .demo-iframe-wrap{height:560px}
-  .demo-iframe-wrap iframe{width:250%;height:1400px;transform:scale(0.4);transform-origin:top left}
+/* Extra small screens (iPhone SE, older iPhones) */
+@media(max-width:390px){
+  .hero{padding:100px 16px var(--sp-m)}
+  h1{font-size:1.8rem}
+  .hero-p{font-size:.88rem}
+  .hero-chip span{font-size:.5rem}
+  .feat-compact{grid-template-columns:1fr}
+  .stat-cell{padding:20px 10px}
+  .demo-iframe-wrap{height:260px}
+  .cta-input{padding:12px 14px;font-size:.82rem}
+  .cta-submit{padding:14px 24px;font-size:.85rem}
 }
 </style>
 </head>
